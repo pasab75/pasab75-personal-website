@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
+    "react-transition-group": "^2.2.1",
     "reactstrap": "^4.8.0",
     "redux": "^3.7.2",
     "redux-little-router": "^15.0.0"
@@ -20,8 +22,16 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["prettier --tab-width 4 --write", "eslint --fix", "git add"],
-    "*.jsx": ["prettier --tab-width 4 --write", "eslint --fix", "git add"]
+    "*.js": [
+      "prettier --tab-width 4 --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.jsx": [
+      "prettier --tab-width 4 --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "eslint": "^4.19.0",

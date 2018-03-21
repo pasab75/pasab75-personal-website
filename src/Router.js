@@ -1,22 +1,25 @@
-import { BrowserRouter, Route } from 'react-router-dom';
-import React, { Component } from 'react';
-import { combineReducers, compose, createStore, applyMiddleware } from 'redux';
-import { initializeCurrentLocation } from 'redux-little-router';
+import React, { Component } from "react";
+import { combineReducers, compose, createStore, applyMiddleware } from "redux";
+import {
+    routerForBrowser,
+    Provider,
+    RouterProvider
+} from "redux-little-router";
+import NavigationBar from "./Components/NavigationBar/NavigationBar";
+const initialState = {};
 
 const routes = {
-    '/About': {
-        title: 'About'
+    "/About": {
+        title: "About"
     },
-    '/Contact': {
-        title: 'Contact'
+    "/Contact": {
+        title: "Contact"
     },
-    '/Projects': {
-        title: 'Projects'
+    "/Projects": {
+        title: "Projects"
     },
-    // You can also define nested route objects!
-    // Just make sure each route key starts with a slash.
-    '/': {
-    title: 'Home'
+    "/": {
+        title: "Home"
     }
 };
 
@@ -24,25 +27,26 @@ const { reducer, middleware, enhancer } = routerForBrowser({
     // The configured routes. Required.
     routes,
     // The basename for all routes. Optional.
-    basename: '/'
+    basename: "/"
 });
 
 const clientOnlyStore = createStore(
-    combineReducers({ router: reducer, yourReducer }),
+    combineReducers({ router: reducer }),
     initialState,
     compose(enhancer, applyMiddleware(middleware))
 );
 
 export default class Router extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-
     }
-    render(){
+    render() {
         return (
-            <BrowserRouter>
-                <Route></Route>
-            </BrowserRouter>
-        )
+            <Provider store={clientOnlyStore}>
+                <RouterProvider store={clientOnlyStore}>
+                    <NavigationBar />
+                </RouterProvider>
+            </Provider>
+        );
     }
 }
