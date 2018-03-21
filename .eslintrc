@@ -21,6 +21,7 @@
     ],    
     "rules": {
         "strict":             [ 2, "safe" ],
+        "indent": [4, "tab"],
         "no-debugger":        2,
         "no-eval":            2,
         "no-with":            2,
