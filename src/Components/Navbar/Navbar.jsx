@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Navbar, NavbarBrand, NavbarToggler } from "reactstrap";
+import "../../Static/bootswatch.scss";
 
 export default class Home extends Component {
   constructor(props) {
