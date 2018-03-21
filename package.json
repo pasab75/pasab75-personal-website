@@ -20,7 +20,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "eslint --fix", "git add"],
+    "*.js": ["prettier --tab-width 4 --write", "eslint --fix", "git add"],
     "*.jsx": ["prettier --write", "eslint --fix", "git add"]
   },
   "devDependencies": {
