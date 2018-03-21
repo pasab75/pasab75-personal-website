@@ -20,13 +20,11 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ]
+    "*.js": ["prettier --write", "eslint --fix", "git add"],
+    "*.jsx": ["prettier --write", "eslint --fix", "git add"]
   },
   "devDependencies": {
+    "eslint": "^4.19.0",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
