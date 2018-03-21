@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "*.js": ["prettier --tab-width 4 --write", "eslint --fix", "git add"],
-    "*.jsx": ["prettier --write", "eslint --fix", "git add"]
+    "*.jsx": ["prettier --tab-width 4 --write", "eslint --fix", "git add"]
   },
   "devDependencies": {
     "eslint": "^4.19.0",
