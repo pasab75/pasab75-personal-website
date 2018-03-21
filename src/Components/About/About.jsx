@@ -8,8 +8,10 @@ export default class About extends Component {
     render() {
         return (
             <Fragment forRoute="/About">
-                <h2>hi</h2>
-                <p>this is the about page</p>
+                <div>
+                    <h2>hi</h2>
+                    <p>this is the about page</p>
+                </div>
             </Fragment>
         );
     }

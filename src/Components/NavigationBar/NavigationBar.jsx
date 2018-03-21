@@ -10,7 +10,7 @@ export default class NavigationBar extends Component {
     }
     render() {
         return (
-            <div>
+            <div id="NavigationBar">
                 <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
                     <Link className="navbar-brand" href="/">
                         Sabatino

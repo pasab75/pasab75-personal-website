@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { combineReducers, compose, createStore, applyMiddleware } from "redux";
 import { routerForBrowser } from "redux-little-router";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
@@ -40,12 +40,16 @@ export class Router extends Component {
     }
     render() {
         return (
-            <div>
-                <NavigationBar />
-                <Home />
-                <About />
-                <Projects />
-                <Contact />
+            <div id="Router">
+                <header>
+                    <NavigationBar props={this.props} />
+                </header>
+                <main>
+                    <Home />
+                    <About />
+                    <Projects />
+                    <Contact />
+                </main>
             </div>
         );
     }

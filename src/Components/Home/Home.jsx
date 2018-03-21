@@ -8,8 +8,10 @@ export default class Home extends Component {
     render() {
         return (
             <Fragment forRoute="/">
-                <h2>hi</h2>
-                <p>this is the home page</p>
+                <div>
+                    <h2>hi</h2>
+                    <p>this is the home page</p>
+                </div>
             </Fragment>
         );
     }

@@ -8,8 +8,10 @@ export default class Projects extends Component {
     render() {
         return (
             <Fragment forRoute="/Projects">
-                <h2>hi</h2>
-                <p>this is the projects page</p>
+                <div>
+                    <h2>hi</h2>
+                    <p>this is the projects page</p>
+                </div>
             </Fragment>
         );
     }
