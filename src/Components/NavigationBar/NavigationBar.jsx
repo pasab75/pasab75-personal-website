@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Navbar, Nav, NavItem, NavbarBrand, NavbarToggler } from "reactstrap";
-import { Link, PersistentQueryLink } from "redux-little-router";
-import "../../Static/bootswatch.scss";
+import { Navbar, Nav, NavItem } from "reactstrap";
+import { Link } from "redux-little-router";
+import "../../Static/bootswatch.css";
 
 // Exports our bootstrap style bar for use in the router
 export default class NavigationBar extends Component {
@@ -11,7 +11,7 @@ export default class NavigationBar extends Component {
     render() {
         return (
             <div>
-                <Navbar>
+                <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary">
                     <Link className="navbar-brand" href="/">
                         Sabatino
                     </Link>

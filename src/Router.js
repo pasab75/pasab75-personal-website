@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { combineReducers, compose, createStore, applyMiddleware } from "redux";
-import {
-    routerForBrowser,
-    Provider,
-    RouterProvider
-} from "redux-little-router";
+import { routerForBrowser } from "redux-little-router";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
-const initialState = {};
+import About from "./Components/About/About";
+import Home from "./Components/Home/Home";
+import Projects from "./Components/Projects/Projects";
+import Contact from "./Components/Contact/Contact";
 
+const initialState = {};
 const routes = {
     "/About": {
         title: "About"
@@ -25,28 +25,28 @@ const routes = {
 
 const { reducer, middleware, enhancer } = routerForBrowser({
     // The configured routes. Required.
-    routes,
-    // The basename for all routes. Optional.
-    basename: "/"
+    routes
 });
 
-const clientOnlyStore = createStore(
+export const Store = createStore(
     combineReducers({ router: reducer }),
     initialState,
     compose(enhancer, applyMiddleware(middleware))
 );
 
-export default class Router extends Component {
+export class Router extends Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <Provider store={clientOnlyStore}>
-                <RouterProvider store={clientOnlyStore}>
-                    <NavigationBar />
-                </RouterProvider>
-            </Provider>
+            <div>
+                <NavigationBar />
+                <Home />
+                <About />
+                <Projects />
+                <Contact />
+            </div>
         );
     }
 }

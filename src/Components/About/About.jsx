@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Fragment } from "redux-little-router";
 
 export default class About extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-
     }
-    render(){
+    render() {
         return (
-            <div>
+            <Fragment forRoute="/About">
                 <h2>hi</h2>
                 <p>this is the about page</p>
-            </div>
-        )
+            </Fragment>
+        );
     }
 }
