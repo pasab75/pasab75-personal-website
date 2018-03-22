@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import { Fragment } from "redux-little-router";
 import { combineReducers, compose, createStore, applyMiddleware } from "redux";
 import { routerForBrowser } from "redux-little-router";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
@@ -9,6 +10,9 @@ import Contact from "./Components/Contact/Contact";
 
 const initialState = {};
 const routes = {
+    "/": {
+        title: "Home"
+    },
     "/About": {
         title: "About"
     },
@@ -17,9 +21,6 @@ const routes = {
     },
     "/Projects": {
         title: "Projects"
-    },
-    "/": {
-        title: "Home"
     }
 };
 
@@ -44,12 +45,14 @@ export class Router extends Component {
                 <header>
                     <NavigationBar props={this.props} />
                 </header>
-                <main>
-                    <Home />
-                    <About />
-                    <Projects />
-                    <Contact />
-                </main>
+                <Fragment forRoute="/">
+                    <div>
+                        <Home />
+                        <About />
+                        <Projects />
+                        <Contact />
+                    </div>
+                </Fragment>
             </div>
         );
     }
