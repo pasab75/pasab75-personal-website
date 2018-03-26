@@ -3,6 +3,7 @@ import { Fragment } from "redux-little-router";
 import { combineReducers, compose, createStore, applyMiddleware } from "redux";
 import { routerForBrowser } from "redux-little-router";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
+import NavigationBarSematic from "./Components/NavigationBar/NavigationBarSematic";
 import About from "./Components/About/About";
 import Home from "./Components/Home/Home";
 import Projects from "./Components/Projects/Projects";
@@ -44,6 +45,7 @@ export class Router extends Component {
             <div id="Router">
                 <header>
                     <NavigationBar props={this.props} />
+                    <NavigationBarSematic props={this.props} />
                 </header>
                 <Fragment forRoute="/">
                     <div>
