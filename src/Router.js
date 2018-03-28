@@ -29,11 +29,11 @@ const { reducer, middleware, enhancer } = routerForBrowser({
     // The configured routes. Required.
     routes
 });
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const Store = createStore(
     combineReducers({ router: reducer }),
     initialState,
-    compose(enhancer, applyMiddleware(middleware))
+    composeEnhancers(enhancer, applyMiddleware(middleware))
 );
 
 export class Router extends Component {
@@ -44,7 +44,7 @@ export class Router extends Component {
         return (
             <div id="Router">
                 <header>
-                    <NavigationBar props={this.props} />
+                    {/* <NavigationBar props={this.props} /> */}
                     <NavigationBarSematic props={this.props} />
                 </header>
                 <Fragment forRoute="/">
