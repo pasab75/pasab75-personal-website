@@ -24,7 +24,7 @@ export default class About extends Component {
                             <Card.Description>
                                 <p>
                                     Using Docker, RabbitMQ, Nifi, AWS, or Storm;
-                                    I've experience designing automated
+                                    I've experiance designing automated
                                     solutions
                                 </p>
                             </Card.Description>
