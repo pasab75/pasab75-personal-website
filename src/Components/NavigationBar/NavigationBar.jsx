@@ -5,9 +5,6 @@ import "../../Static/bootswatch.css";
 
 // Exports our bootstrap style bar for use in the router
 export default class NavigationBar extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div id="NavigationBar">

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Fragment } from "redux-little-router";
 import { combineReducers, compose, createStore, applyMiddleware } from "redux";
 import { routerForBrowser } from "redux-little-router";
-import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import NavigationBarSematic from "./Components/NavigationBar/NavigationBarSematic";
 import About from "./Components/About/About";
 import Home from "./Components/Home/Home";
@@ -37,9 +36,6 @@ export const Store = createStore(
 );
 
 export class Router extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div id="Router">

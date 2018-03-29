@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Fragment } from "redux-little-router";
 
 export default class Projects extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <Fragment forRoute="/Projects">
