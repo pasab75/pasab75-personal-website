@@ -1,6 +1,8 @@
 {
+    "parser": "babel-eslint",
     "plugins": [
-        "react"
+        "react",
+        "babel"
     ],
     "parserOptions": {
         "ecmaVersion": 7,
@@ -10,28 +12,19 @@
         }
     },
     "env": {
-        "es6":     true,
+        "es6": true,
         "browser": true,
-        "node":    true,
-        "mocha":   true
-    },   
+        "node": true,
+        "mocha": true
+    },
     "extends": [
-        "eslint:recommended", 
+        "eslint:recommended",
         "plugin:react/recommended"
-    ],    
+    ],
     "rules": {
-        "strict":             [ 2, "safe" ],
-        "no-debugger":        2,
-        "no-eval":            2,
-        "no-with":            2,
-        "valid-typeof":       2,
-        "no-unused-vars":     1,
-        "no-continue":        1,
-        "no-extra-semi":      1,
-        "no-unreachable":     1,
-        "no-unused-expressions": 1,
-        "no-magic-numbers":   1,
-        "react/prefer-es6-class": 1,
-        "react/no-unescaped-entities": 1
+        "babel/new-cap": 1,
+        "babel/object-curly-spacing": 1,
+        "babel/no-invalid-this": 1,
+        "babel/semi": 1
     }
 }

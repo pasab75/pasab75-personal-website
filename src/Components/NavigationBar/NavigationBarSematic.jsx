@@ -1,27 +1,31 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { push } from "redux-little-router";
-import { Menu } from "semantic-ui-react";
+import {connect} from "react-redux";
+import {push} from "redux-little-router";
+import {Menu} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import {withProps} from "recompose";
+
 const textStyle = {
     color: "white"
 };
 const myColor = "#009688";
 
 class NavigationBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-        this.handleItemClick = (e, { name }) => {
-            this.setState({ activeItem: name });
-            name = name === "Home" ? "/" : name;
-            this.props.onMenuClick(name);
-        };
-    }
+    state = {};
+    handleItemClick = (e, {name}) => {
+        this.setState({activeItem: name});
+        name = name === "Home" ? "/" : name;
+        this.props.onMenuClick(name);
+    };
+
+    NavItem = withProps({
+        onClick: this.handleItemClick,
+        style: textStyle
+    })(Menu.Item);
 
     render() {
-        const { activeItem } = this.state;
+        const {activeItem} = this.state;
         return (
             <div id="NavigationBar">
                 <Menu
@@ -33,29 +37,21 @@ class NavigationBar extends Component {
                     }}
                 >
                     <Menu.Menu position="right">
-                        <Menu.Item
+                        <this.NavItem
                             name="Home"
                             active={activeItem === "Home"}
-                            onClick={this.handleItemClick}
-                            style={textStyle}
                         />
-                        <Menu.Item
+                        <this.NavItem
                             name="About"
                             active={activeItem === "About"}
-                            onClick={this.handleItemClick}
-                            style={textStyle}
                         />
-                        <Menu.Item
+                        <this.NavItem
                             name="Contact"
                             active={activeItem === "Contact"}
-                            onClick={this.handleItemClick}
-                            style={textStyle}
                         />
-                        <Menu.Item
+                        <this.NavItem
                             name="Projects"
                             active={activeItem === "Projects"}
-                            onClick={this.handleItemClick}
-                            style={textStyle}
                         />
                         {/* <Link className="item" href="/">
                             Home
@@ -79,13 +75,9 @@ class NavigationBar extends Component {
 const mapStateToProps = state => ({
     router: state.router
 });
-const mapDispatchToProps = dispatch => {
-    return {
-        onMenuClick: ref => {
-            dispatch(push(ref));
-        }
-    };
-};
+const mapDispatchToProps = dispatch => ({
+    onMenuClick: ref => dispatch(push(ref))
+});
 
 NavigationBar.propTypes = {
     onMenuClick: PropTypes.func
