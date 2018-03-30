@@ -12,6 +12,9 @@ const textStyle = {
 const myColor = "#009688";
 
 class NavigationBar extends Component {
+    static propTypes = {
+        onMenuClick: PropTypes.func
+    };
     state = {};
     handleItemClick = (e, {name}) => {
         this.setState({activeItem: name});
@@ -66,10 +69,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     onMenuClick: ref => dispatch(push(ref))
 });
-
-NavigationBar.propTypes = {
-    onMenuClick: PropTypes.func
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
 // Exports our bootstrap style bar for use in the router
