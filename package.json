@@ -10,7 +10,7 @@
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
     "react-transition-group": "^2.2.1",
-    "reactstrap": "^4.8.0",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-little-router": "^15.0.0",
     "semantic-ui-css": "^2.3.1",
