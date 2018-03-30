@@ -53,18 +53,6 @@ class NavigationBar extends Component {
                             name="Projects"
                             active={activeItem === "Projects"}
                         />
-                        {/* <Link className="item" href="/">
-                            Home
-                        </Link> */}
-                        {/* <Link className="item" href="/About">
-                            About
-                        </Link>
-                        <Link className="item" href="/Contact">
-                            Contact
-                        </Link>
-                        <Link className="item" href="/Projects">
-                            Projects
-                        </Link> */}
                     </Menu.Menu>
                 </Menu>
             </div>
