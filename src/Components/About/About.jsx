@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Fragment } from "redux-little-router";
-import { Card, Image, Grid } from "semantic-ui-react";
+import React, {Component} from "react";
+import {Fragment} from "redux-little-router";
+import {Card, Image, Grid} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import DockerImage from "./static/docker.png";
 import NodeImage from "./static/nodejs.png";
@@ -35,7 +35,7 @@ export default class About extends Component {
                             <Card centered={true}>
                                 <Image src={DockerImage} circular={true} />
                                 <Card.Content>
-                                    <Card.Header>DevOps</Card.Header>
+                                    <Card.Header>AWS</Card.Header>
                                     <Card.Meta>
                                         <span className="date">
                                             Expert with experiance since 2015
@@ -43,9 +43,12 @@ export default class About extends Component {
                                     </Card.Meta>
                                     <Card.Description>
                                         <p>
-                                            Using Docker, RabbitMQ, Nifi, AWS,
-                                            or Storm; I've experiance designing
-                                            automated solutions
+                                            Lambda, S3, EC2, SNS, and SQS may
+                                            all sound like a foriegn language
+                                            but I've built robust solutions
+                                            utilzing AWS services for fractions
+                                            of what we were paying for internal
+                                            hosting.
                                         </p>
                                     </Card.Description>
                                 </Card.Content>
