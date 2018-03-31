@@ -34,9 +34,9 @@ class NavigationBar extends Component {
                 <Menu
                     secondary
                     style={{
-                        "background-color": myColor,
+                        backgroundColor: myColor,
                         color: "white",
-                        "border-radius": "0px"
+                        borderRadius: "0px"
                     }}
                 >
                     <Menu.Menu position="right">
