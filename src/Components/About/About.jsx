@@ -1,15 +1,15 @@
 import React, {Component} from "react";
-import PropTypes from "prop-types";
 import {Fragment} from "redux-little-router";
 import SkillCard from "./SkillCard";
-import {Grid} from "semantic-ui-react";
+import styled from "styled-components";
+import {Card} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-import DockerImage from "./static/docker.png";
-import NodeImage from "./static/nodejs.png";
-import PythonImage from "./static/python-logo.png";
-import StormImage from "./static/storm_logo.png";
-import JavaImage from "./static/java.jpg";
-import DataImage from "./static/datascience.jpg";
+import DockerImage from "./static/docker 800x600.png";
+import NodeImage from "./static/nodejs 800x600.png";
+import PythonImage from "./static/python-logo 800x600.png";
+import StormImage from "./static/storm_logo 800x600.png";
+import JavaImage from "./static/java 800x600.jpg";
+import DataImage from "./static/datascience 800x600.jpg";
 
 // const imageStyle = {
 //     position: "relative",
@@ -18,15 +18,25 @@ import DataImage from "./static/datascience.jpg";
 //     backgroundSize: "cover"
 // };
 
+const ContainerDiv = styled.div`
+    text-align: left;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+`;
+
+const StyledH2 = styled.h2`
+    padding-top: 10px;
+`;
+
 export default class About extends Component {
     render() {
         return (
             <Fragment forRoute="/About">
-                <div>
-                    <div>
-                        <h2>Skills</h2>
-
-                        <Grid stackable={true}>
+                <section>
+                    <ContainerDiv>
+                        <StyledH2>Skills</StyledH2>
+                        <Card.Group stackable={true}>
                             <SkillCard
                                 image={DockerImage}
                                 headerText={"DevOps"}
@@ -38,7 +48,6 @@ export default class About extends Component {
                             />
                             <SkillCard
                                 image={StormImage}
-                                imageStyle={{padding: "15%"}}
                                 headerText={"Automation"}
                                 metaText={"Designing Socultions since 2015"}
                                 metaType={"date"}
@@ -55,14 +64,13 @@ export default class About extends Component {
                                     "Using Hadoop, Panda, Map/Reduce; finding meaning in noisy data is a breeze."
                                 }
                             />
-                        </Grid>
-                    </div>
-                    <div>
-                        <h2>Languages</h2>
-                        <Grid stackable={true}>
+                        </Card.Group>
+                    </ContainerDiv>
+                    <ContainerDiv>
+                        <StyledH2>Languages and Frameworks</StyledH2>
+                        <Card.Group stackable={true}>
                             <SkillCard
                                 image={PythonImage}
-                                imageStyle={{padding: "10%"}}
                                 headerText={"Python"}
                                 metaText={"Expert with experiance since 2013"}
                                 metaType={"date"}
@@ -72,7 +80,6 @@ export default class About extends Component {
                             />
                             <SkillCard
                                 image={NodeImage}
-                                imageStyle={{padding: "10%"}}
                                 headerText={"Node.js"}
                                 metaText={"Expert with experiance since 2015"}
                                 metaType={"date"}
@@ -84,7 +91,6 @@ export default class About extends Component {
                             />
                             <SkillCard
                                 image={JavaImage}
-                                imageStyle={{padding: "15%"}}
                                 headerText={"Java"}
                                 metaText={"Expert with experiance since 2015"}
                                 metaType={"date"}
@@ -92,9 +98,9 @@ export default class About extends Component {
                                     as it was 15 years ago.  Sometimes you need enterprise 
                                     solutions and Java is here for that.`}
                             />
-                        </Grid>
-                    </div>
-                </div>
+                        </Card.Group>
+                    </ContainerDiv>
+                </section>
             </Fragment>
         );
     }
