@@ -20,7 +20,7 @@ import DataImage from "./static/datascience 800x600.jpg";
 //     backgroundSize: "cover"
 // };
 
-const ContainerDiv = styled.div`
+const ContainerDiv = styled.section`
     text-align: left;
     align-items: center;
     width: 80%;
@@ -100,7 +100,7 @@ export default class About extends Component {
                         </Card.Group>
                     </ContainerDiv>
                     <ContainerDiv>
-                        <StyledH2>I'm Knowledgable About</StyledH2>
+                        <StyledH2>I'm Knowledgable About: </StyledH2>
                         <Card.Group stackable={true}>
                             <SkillCard
                                 image={ReactImage}
@@ -108,15 +108,6 @@ export default class About extends Component {
                                 metaText={"Building websites with since 2017"}
                                 metaType={"date"}
                                 descriptionText={`Component Design that enabled templating, clear control flow, and declaritive programming.`}
-                            />
-                            <SkillCard
-                                image={CSharpImage}
-                                headerText={"C#"}
-                                metaText={
-                                    "Built a large scale data processing framework in 2015"
-                                }
-                                metaType={"date"}
-                                descriptionText={`I can produce fast, scalable code that is easy to maintain with C#.`}
                             />
                             <SkillCard
                                 image={CSharpImage}

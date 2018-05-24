@@ -7,7 +7,6 @@ import About from "./Components/About/About";
 import Home from "./Components/Home/Home";
 import Projects from "./Components/Projects/Projects";
 import Contact from "./Components/Contact/Contact";
-import BannerImage from "./Components/BannerImage/BannerImage";
 
 const initialState = {};
 const routes = {
@@ -43,7 +42,6 @@ export class Router extends Component {
                 <header>
                     {/* <NavigationBar props={this.props} /> */}
                     <NavigationBarSematic props={this.props} />
-                    <BannerImage />
                 </header>
                 <Fragment forRoute="/">
                     <div>
