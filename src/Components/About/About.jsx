@@ -42,7 +42,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={DockerImage}
                                 headerText={"DevOps"}
-                                metaText={"Expert with experiance since 2015"}
+                                metaText={"Expert with experience since 2015"}
                                 metaType={"date"}
                                 descriptionText={
                                     "Using Docker, Ansible, or Kubernetes: I've designed low maintence environments handling problems of all sizes."
@@ -51,16 +51,16 @@ export default class About extends Component {
                             <SkillCard
                                 image={StormImage}
                                 headerText={"Automation"}
-                                metaText={"Designing Socultions since 2015"}
+                                metaText={"Designing solutions since 2015"}
                                 metaType={"date"}
                                 descriptionText={
-                                    "Using RabbitMQ, Nifi, or Storm; I've experiance designing automated solutions that can handle incoming onslaughts of data."
+                                    "Using RabbitMQ, Nifi, or Storm; I've experience designing automated solutions that can handle incoming onslaughts of data."
                                 }
                             />
                             <SkillCard
                                 image={DataImage}
                                 headerText={"DataScience"}
-                                metaText={"Expert with experiance since 2014"}
+                                metaText={"Expert with experience since 2014"}
                                 metaType={"date"}
                                 descriptionText={
                                     "Using Hadoop, Panda, Map/Reduce; finding meaning in noisy data is a breeze."
@@ -69,7 +69,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={PythonImage}
                                 headerText={"Python"}
-                                metaText={"Expert with experiance since 2013"}
+                                metaText={"Expert with experience since 2013"}
                                 metaType={"date"}
                                 descriptionText={`For simple, elegant code, it's hard to beat Python. 
                                     I've writen large frameworks, Asynchronous web servers, and data science analytics                                 
@@ -78,7 +78,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={NodeImage}
                                 headerText={"Node.js"}
-                                metaText={"Expert with experiance since 2015"}
+                                metaText={"Expert with experience since 2015"}
                                 metaType={"date"}
                                 descriptionText={`I delight in building with Express,
                                     Websockets, Asynchronous
@@ -90,7 +90,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={JavaImage}
                                 headerText={"Java"}
-                                metaText={"Expert with experiance since 2014"}
+                                metaText={"Expert with experience since 2014"}
                                 metaType={"date"}
                                 descriptionText={`Write once, run everywhere is still as true today
                                     as it was 15 years ago.  Sometimes you need enterprise 
