@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import GrayClimbImage from "./static/gray_climb.png";
 import styled from "styled-components";
 
@@ -52,9 +52,7 @@ export default class About extends Component {
                         <em>Full Stack Developer and DevOps Practicioner</em>
                     </p>
                     <p>
-                        <strongText>
-                            Passionate about maintainable solutions
-                        </strongText>
+                        <strongText>Passionate about maintainable solutions</strongText>
                     </p>
                 </CenteredText>
             </ContainerDiv>

@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {push} from "redux-little-router";
-import {Menu} from "semantic-ui-react";
+import { connect } from "react-redux";
+import { push } from "redux-little-router";
+import { Menu } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
-import {withProps} from "recompose";
+import { withProps } from "recompose";
 
 const textStyle = {
     color: "white"
@@ -15,9 +15,11 @@ class NavigationBar extends Component {
     static propTypes = {
         onMenuClick: PropTypes.func
     };
+
     state = {};
-    handleItemClick = (e, {name}) => {
-        this.setState({activeItem: name});
+
+    handleItemClick = (e, { name }) => {
+        this.setState({ activeItem: name });
         name = name === "Home" ? "/" : name;
         this.props.onMenuClick(name);
     };
@@ -28,7 +30,7 @@ class NavigationBar extends Component {
     })(Menu.Item);
 
     render() {
-        const {activeItem} = this.state;
+        const { activeItem } = this.state;
         return (
             <div id="NavigationBar">
                 <Menu
@@ -40,22 +42,10 @@ class NavigationBar extends Component {
                     }}
                 >
                     <Menu.Menu position="right">
-                        <this.NavItem
-                            name="Home"
-                            active={activeItem === "Home"}
-                        />
-                        <this.NavItem
-                            name="About"
-                            active={activeItem === "About"}
-                        />
-                        <this.NavItem
-                            name="Contact"
-                            active={activeItem === "Contact"}
-                        />
-                        <this.NavItem
-                            name="Projects"
-                            active={activeItem === "Projects"}
-                        />
+                        <this.NavItem name="Home" active={activeItem === "Home"} />
+                        <this.NavItem name="About" active={activeItem === "About"} />
+                        <this.NavItem name="Contact" active={activeItem === "Contact"} />
+                        <this.NavItem name="Projects" active={activeItem === "Projects"} />
                     </Menu.Menu>
                 </Menu>
             </div>
@@ -70,5 +60,8 @@ const mapDispatchToProps = dispatch => ({
     onMenuClick: ref => dispatch(push(ref))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(NavigationBar);
 // Exports our bootstrap style bar for use in the router
