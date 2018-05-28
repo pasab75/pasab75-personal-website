@@ -37,7 +37,7 @@ export default class About extends Component {
             <Fragment forRoute="/About">
                 <section>
                     <ContainerDiv>
-                        <StyledH2>I'm Experianced With:</StyledH2>
+                        <StyledH2>I'm experienced with:</StyledH2>
                         <Card.Group stackable={true}>
                             <SkillCard
                                 image={DockerImage}
