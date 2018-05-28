@@ -1,8 +1,8 @@
-import React, {Component} from "react";
-import {Fragment} from "redux-little-router";
+import React, { Component } from "react";
+import { Fragment } from "redux-little-router";
 import SkillCard from "./SkillCard";
 import styled from "styled-components";
-import {Card} from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import DockerImage from "./static/docker 800x600.png";
 import NodeImage from "./static/nodejs 800x600.png";
@@ -59,7 +59,7 @@ export default class About extends Component {
                             />
                             <SkillCard
                                 image={DataImage}
-                                headerText={"DataScience"}
+                                headerText={"Data Science"}
                                 metaText={"Expert with experience since 2014"}
                                 metaType={"date"}
                                 descriptionText={
@@ -112,9 +112,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={CSharpImage}
                                 headerText={"C#"}
-                                metaText={
-                                    "Built a large scale data processing framework in 2015"
-                                }
+                                metaText={"Built a large scale data processing framework in 2015"}
                                 metaType={"date"}
                                 descriptionText={`I can produce fast, scalable code that is easy to maintain with C#.`}
                             />
