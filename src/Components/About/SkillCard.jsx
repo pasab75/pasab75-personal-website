@@ -15,7 +15,7 @@ export default class SkillCard extends Component {
     };
 
     render() {
-        const { image, headerText, metaText, metaType, descriptionText } = this.props;
+        const { image, headerText, metaText, metaType, descriptionText, imageStyle } = this.props;
         return (
             <Card centered={true}>
                 <Image src={image} circular={true} size="medium" style={imageStyle} />
