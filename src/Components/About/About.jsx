@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { Fragment } from "redux-little-router";
-import SkillCard from "./SkillCard";
-import styled from "styled-components";
-import { Card } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
-import DockerImage from "./static/docker 800x600.png";
-import NodeImage from "./static/nodejs 800x600.png";
-import ReactImage from "./static/react 800x600.jpg";
-import CSharpImage from "./static/c# 800x600.jpg";
-import PythonImage from "./static/python-logo 800x600.png";
-import StormImage from "./static/storm_logo 800x600.png";
-import JavaImage from "./static/java 800x600.jpg";
-import DataImage from "./static/datascience 800x600.jpg";
+import React, { Component } from "react"
+import { Fragment } from "redux-little-router"
+import SkillCard from "./SkillCard"
+import styled from "styled-components"
+import { Card } from "semantic-ui-react"
+import "semantic-ui-css/semantic.min.css"
+import DockerImage from "./static/docker 800x600.png"
+import NodeImage from "./static/nodejs 800x600.png"
+import ReactImage from "./static/react 800x600.jpg"
+import CSharpImage from "./static/c# 800x600.jpg"
+import PythonImage from "./static/python-logo 800x600.png"
+import StormImage from "./static/storm_logo 800x600.png"
+import JavaImage from "./static/java 800x600.jpg"
+import DataImage from "./static/datascience 800x600.jpg"
 
 // const imageStyle = {
 //     position: "relative",
@@ -25,11 +25,11 @@ const ContainerDiv = styled.section`
     align-items: center;
     width: 80%;
     margin: 0 auto;
-`;
+`
 
 const StyledH2 = styled.h2`
     padding-top: 10px;
-`;
+`
 
 export default class About extends Component {
     render() {
@@ -112,7 +112,9 @@ export default class About extends Component {
                             <SkillCard
                                 image={CSharpImage}
                                 headerText={"C#"}
-                                metaText={"Built a large scale data processing framework in 2015"}
+                                metaText={
+                                    "Built a large scale data processing framework in 2015"
+                                }
                                 metaType={"date"}
                                 descriptionText={`I can produce fast, scalable code that is easy to maintain with C#.`}
                             />
@@ -120,6 +122,6 @@ export default class About extends Component {
                     </ContainerDiv>
                 </section>
             </Fragment>
-        );
+        )
     }
 }

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Card, Image } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import { Card, Image } from "semantic-ui-react"
+import "semantic-ui-css/semantic.min.css"
 
 export default class SkillCard extends Component {
     static propTypes = {
@@ -11,14 +11,26 @@ export default class SkillCard extends Component {
         headerText: PropTypes.string,
         metaText: PropTypes.string,
         metaType: PropTypes.string,
-        descriptionText: PropTypes.string
-    };
+        descriptionText: PropTypes.string,
+    }
 
     render() {
-        const { image, headerText, metaText, metaType, descriptionText, imageStyle } = this.props;
+        const {
+            image,
+            headerText,
+            metaText,
+            metaType,
+            descriptionText,
+            imageStyle,
+        } = this.props
         return (
             <Card centered={true}>
-                <Image src={image} circular={true} size="medium" style={imageStyle} />
+                <Image
+                    src={image}
+                    circular={true}
+                    size="medium"
+                    style={imageStyle}
+                />
                 <Card.Content>
                     <Card.Header>{headerText}</Card.Header>
                     <Card.Meta>
@@ -27,6 +39,6 @@ export default class SkillCard extends Component {
                     <Card.Description>{descriptionText}</Card.Description>
                 </Card.Content>
             </Card>
-        );
+        )
     }
 }
