@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import { Fragment } from "redux-little-router";
 import SkillCard from "./SkillCard";
 import styled from "styled-components";

@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
-import { Card, Image } from "semantic-ui-react"
-import "semantic-ui-css/semantic.min.css"
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Card, Image } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 
 export default class SkillCard extends Component {
     static propTypes = {

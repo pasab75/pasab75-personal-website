@@ -8,7 +8,7 @@ const TextSection = styled.section`
     position: relative;
     text-align: center;
     max-height: 600px;
-`
+`;
 
 export default class Home extends Component {
     render() {
@@ -16,13 +16,8 @@ export default class Home extends Component {
             <Fragment forRoute="/">
                 <TextSection>
                     <BannerImage />
-                    <h2>Hello, my name is Paul Sabatino</h2>
-                    <p>
-                        I'm a developer with 5 years of experience building
-                        solutions for{" "}
-                    </p>
                 </TextSection>
             </Fragment>
-        )
+        );
     }
 }
