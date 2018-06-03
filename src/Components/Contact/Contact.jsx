@@ -52,6 +52,6 @@ export default class Contact extends Component {
                     </FlexBoxRow>
                 </EightyPercentSection>
             </Fragment>
-        )
+        );
     }
 }

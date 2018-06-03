@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import { Fragment } from "redux-little-router";
+import {Fragment} from "redux-little-router";
 import SkillCard from "./SkillCard";
 import styled from "styled-components";
-import { Card } from "semantic-ui-react";
+import {Card} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import DockerImage from "./static/docker 800x600.png";
 import NodeImage from "./static/nodejs 800x600.png";
@@ -25,11 +25,11 @@ const ContainerDiv = styled.section`
     align-items: center;
     width: 80%;
     margin: 0 auto;
-`
+`;
 
 const StyledH2 = styled.h2`
     padding-top: 10px;
-`
+`;
 
 export default class About extends Component {
     render() {
@@ -37,7 +37,7 @@ export default class About extends Component {
             <Fragment forRoute="/About">
                 <section>
                     <ContainerDiv>
-                        <StyledH2>I'm experienced with:</StyledH2>
+                        <StyledH2>I&#39;m experienced with:</StyledH2>
                         <Card.Group stackable={true}>
                             <SkillCard
                                 image={DockerImage}
@@ -100,7 +100,7 @@ export default class About extends Component {
                         </Card.Group>
                     </ContainerDiv>
                     <ContainerDiv>
-                        <StyledH2>I'm Knowledgable About: </StyledH2>
+                        <StyledH2>I&#39;m Knowledgable About: </StyledH2>
                         <Card.Group stackable={true}>
                             <SkillCard
                                 image={ReactImage}
@@ -122,6 +122,6 @@ export default class About extends Component {
                     </ContainerDiv>
                 </section>
             </Fragment>
-        )
+        );
     }
 }

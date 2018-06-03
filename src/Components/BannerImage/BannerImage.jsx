@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import GrayClimbImage from "./static/gray_climb.png"
-import styled from "styled-components"
+import React, {Component} from "react";
+import GrayClimbImage from "./static/gray_climb.png";
+import styled from "styled-components";
 
 const StyledImg = styled.img`
     padding-top: 10px;
@@ -58,6 +58,6 @@ export default class About extends Component {
                     </p>
                 </CenteredText>
             </ContainerDiv>
-        )
+        );
     }
 }

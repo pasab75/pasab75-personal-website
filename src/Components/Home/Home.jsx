@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import { Fragment } from "redux-little-router"
-import BannerImage from "../BannerImage/BannerImage"
-import styled from "styled-components"
+import React, {Component} from "react";
+import {Fragment} from "redux-little-router";
+import BannerImage from "../BannerImage/BannerImage";
+import styled from "styled-components";
 //import {Image} from "semantic-ui-react";
 
 const TextSection = styled.section`
