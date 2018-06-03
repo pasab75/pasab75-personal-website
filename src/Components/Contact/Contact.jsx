@@ -8,6 +8,8 @@ export default class Contact extends Component {
                 <div>
                     <h2>hi</h2>
                     <p>this is the contact page</p>
+                    <br />
+
                 </div>
             </Fragment>
         )

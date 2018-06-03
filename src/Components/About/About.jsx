@@ -1,17 +1,17 @@
-import React, { Component } from "react"
-import { Fragment } from "redux-little-router"
-import SkillCard from "./SkillCard"
-import styled from "styled-components"
-import { Card } from "semantic-ui-react"
-import "semantic-ui-css/semantic.min.css"
-import DockerImage from "./static/docker 800x600.png"
-import NodeImage from "./static/nodejs 800x600.png"
-import ReactImage from "./static/react 800x600.jpg"
-import CSharpImage from "./static/c# 800x600.jpg"
-import PythonImage from "./static/python-logo 800x600.png"
-import StormImage from "./static/storm_logo 800x600.png"
-import JavaImage from "./static/java 800x600.jpg"
-import DataImage from "./static/datascience 800x600.jpg"
+import React, { Component } from "react";
+import { Fragment } from "redux-little-router";
+import SkillCard from "./SkillCard";
+import styled from "styled-components";
+import { Card } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
+import DockerImage from "./static/docker 800x600.png";
+import NodeImage from "./static/nodejs 800x600.png";
+import ReactImage from "./static/react 800x600.jpg";
+import CSharpImage from "./static/c# 800x600.jpg";
+import PythonImage from "./static/python-logo 800x600.png";
+import StormImage from "./static/storm_logo 800x600.png";
+import JavaImage from "./static/java 800x600.jpg";
+import DataImage from "./static/datascience 800x600.jpg";
 
 // const imageStyle = {
 //     position: "relative",
