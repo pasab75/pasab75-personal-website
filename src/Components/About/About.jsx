@@ -1,17 +1,17 @@
-import React, {Component} from "react";
-import {Fragment} from "redux-little-router";
-import SkillCard from "./SkillCard";
-import styled from "styled-components";
-import {Card} from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
-import DockerImage from "./static/docker 800x600.png";
-import NodeImage from "./static/nodejs 800x600.png";
-import ReactImage from "./static/react 800x600.jpg";
-import CSharpImage from "./static/c# 800x600.jpg";
-import PythonImage from "./static/python-logo 800x600.png";
-import StormImage from "./static/storm_logo 800x600.png";
-import JavaImage from "./static/java 800x600.jpg";
-import DataImage from "./static/datascience 800x600.jpg";
+import React, { Component } from "react"
+import { Fragment } from "redux-little-router"
+import SkillCard from "./SkillCard"
+import styled from "styled-components"
+import { Card } from "semantic-ui-react"
+import "semantic-ui-css/semantic.min.css"
+import DockerImage from "./static/docker 800x600.png"
+import NodeImage from "./static/nodejs 800x600.png"
+import ReactImage from "./static/react 800x600.jpg"
+import CSharpImage from "./static/c# 800x600.jpg"
+import PythonImage from "./static/python-logo 800x600.png"
+import StormImage from "./static/storm_logo 800x600.png"
+import JavaImage from "./static/java 800x600.jpg"
+import DataImage from "./static/datascience 800x600.jpg"
 
 // const imageStyle = {
 //     position: "relative",
@@ -25,11 +25,11 @@ const ContainerDiv = styled.section`
     align-items: center;
     width: 80%;
     margin: 0 auto;
-`;
+`
 
 const StyledH2 = styled.h2`
     padding-top: 10px;
-`;
+`
 
 export default class About extends Component {
     render() {
@@ -37,12 +37,12 @@ export default class About extends Component {
             <Fragment forRoute="/About">
                 <section>
                     <ContainerDiv>
-                        <StyledH2>I'm Experianced With:</StyledH2>
+                        <StyledH2>I'm experienced with:</StyledH2>
                         <Card.Group stackable={true}>
                             <SkillCard
                                 image={DockerImage}
                                 headerText={"DevOps"}
-                                metaText={"Expert with experiance since 2015"}
+                                metaText={"Expert with experience since 2015"}
                                 metaType={"date"}
                                 descriptionText={
                                     "Using Docker, Ansible, or Kubernetes: I've designed low maintence environments handling problems of all sizes."
@@ -51,16 +51,16 @@ export default class About extends Component {
                             <SkillCard
                                 image={StormImage}
                                 headerText={"Automation"}
-                                metaText={"Designing Socultions since 2015"}
+                                metaText={"Designing solutions since 2015"}
                                 metaType={"date"}
                                 descriptionText={
-                                    "Using RabbitMQ, Nifi, or Storm; I've experiance designing automated solutions that can handle incoming onslaughts of data."
+                                    "Using RabbitMQ, Nifi, or Storm; I've experience designing automated solutions that can handle incoming onslaughts of data."
                                 }
                             />
                             <SkillCard
                                 image={DataImage}
-                                headerText={"DataScience"}
-                                metaText={"Expert with experiance since 2014"}
+                                headerText={"Data Science"}
+                                metaText={"Expert with experience since 2014"}
                                 metaType={"date"}
                                 descriptionText={
                                     "Using Hadoop, Panda, Map/Reduce; finding meaning in noisy data is a breeze."
@@ -69,7 +69,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={PythonImage}
                                 headerText={"Python"}
-                                metaText={"Expert with experiance since 2013"}
+                                metaText={"Expert with experience since 2013"}
                                 metaType={"date"}
                                 descriptionText={`For simple, elegant code, it's hard to beat Python. 
                                     I've writen large frameworks, Asynchronous web servers, and data science analytics                                 
@@ -78,7 +78,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={NodeImage}
                                 headerText={"Node.js"}
-                                metaText={"Expert with experiance since 2015"}
+                                metaText={"Expert with experience since 2015"}
                                 metaType={"date"}
                                 descriptionText={`I delight in building with Express,
                                     Websockets, Asynchronous
@@ -90,7 +90,7 @@ export default class About extends Component {
                             <SkillCard
                                 image={JavaImage}
                                 headerText={"Java"}
-                                metaText={"Expert with experiance since 2014"}
+                                metaText={"Expert with experience since 2014"}
                                 metaType={"date"}
                                 descriptionText={`Write once, run everywhere is still as true today
                                     as it was 15 years ago.  Sometimes you need enterprise 
@@ -122,6 +122,6 @@ export default class About extends Component {
                     </ContainerDiv>
                 </section>
             </Fragment>
-        );
+        )
     }
 }

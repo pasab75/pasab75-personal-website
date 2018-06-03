@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Fragment } from "redux-little-router";
+import React, { Component } from "react"
+import { Fragment } from "redux-little-router"
 
 export default class Projects extends Component {
     render() {
@@ -10,6 +10,6 @@ export default class Projects extends Component {
                     <p>this is the projects page</p>
                 </div>
             </Fragment>
-        );
+        )
     }
 }

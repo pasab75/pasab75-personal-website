@@ -1,34 +1,36 @@
-import React, {Component} from "react";
-import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {push} from "redux-little-router";
-import {Menu} from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
-import {withProps} from "recompose";
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import { connect } from "react-redux"
+import { push } from "redux-little-router"
+import { Menu } from "semantic-ui-react"
+import "semantic-ui-css/semantic.min.css"
+import { withProps } from "recompose"
 
 const textStyle = {
-    color: "white"
-};
-const myColor = "#009688";
+    color: "white",
+}
+const myColor = "#009688"
 
 class NavigationBar extends Component {
     static propTypes = {
-        onMenuClick: PropTypes.func
-    };
-    state = {};
-    handleItemClick = (e, {name}) => {
-        this.setState({activeItem: name});
-        name = name === "Home" ? "/" : name;
-        this.props.onMenuClick(name);
-    };
+        onMenuClick: PropTypes.func,
+    }
+
+    state = {}
+
+    handleItemClick = (e, { name }) => {
+        this.setState({ activeItem: name })
+        name = name === "Home" ? "/" : name
+        this.props.onMenuClick(name)
+    }
 
     NavItem = withProps({
         onClick: this.handleItemClick,
-        style: textStyle
-    })(Menu.Item);
+        style: textStyle,
+    })(Menu.Item)
 
     render() {
-        const {activeItem} = this.state;
+        const { activeItem } = this.state
         return (
             <div id="NavigationBar">
                 <Menu
@@ -36,7 +38,7 @@ class NavigationBar extends Component {
                     style={{
                         backgroundColor: myColor,
                         color: "white",
-                        borderRadius: "0px"
+                        borderRadius: "0px",
                     }}
                 >
                     <Menu.Menu position="right">
@@ -59,16 +61,19 @@ class NavigationBar extends Component {
                     </Menu.Menu>
                 </Menu>
             </div>
-        );
+        )
     }
 }
 
 const mapStateToProps = state => ({
-    router: state.router
-});
+    router: state.router,
+})
 const mapDispatchToProps = dispatch => ({
-    onMenuClick: ref => dispatch(push(ref))
-});
+    onMenuClick: ref => dispatch(push(ref)),
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(NavigationBar)
 // Exports our bootstrap style bar for use in the router

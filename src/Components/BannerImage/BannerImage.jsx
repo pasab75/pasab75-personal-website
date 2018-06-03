@@ -1,20 +1,20 @@
-import React, {Component} from "react";
-import GrayClimbImage from "./static/gray_climb.png";
-import styled from "styled-components";
+import React, { Component } from "react"
+import GrayClimbImage from "./static/gray_climb.png"
+import styled from "styled-components"
 
 const StyledImg = styled.img`
     max-width: 100%;
     max-height: 100%;
     align-items: center;
     margin: 0 auto;
-`;
+`
 
 const ContainerDiv = styled.section`
     position: relative;
     text-align: center;
     color: white;
     max-height: 600px;
-`;
+`
 
 // const CenteredBoldText = styled.section`
 //     position: absolute;
@@ -29,7 +29,7 @@ const CenteredText = styled.section`
     top: 50%;
     left: 72%;
     transform: translate(-50%, -50%);
-`;
+`
 
 const strongText = styled.strong`
     color: #fff;
@@ -41,7 +41,7 @@ const strongText = styled.strong`
     letter-spacing: 5px;
     line-height: 1em;
     text-transform: uppercase;
-`;
+`
 export default class About extends Component {
     render() {
         return (
@@ -58,6 +58,6 @@ export default class About extends Component {
                     </p>
                 </CenteredText>
             </ContainerDiv>
-        );
+        )
     }
 }

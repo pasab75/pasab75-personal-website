@@ -28,13 +28,8 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --tab-width 4 --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.jsx": [
-      "prettier --tab-width 4 --write",
+    "*.{js, jsx}": [
+      "prettier --write",
       "eslint --fix",
       "git add"
     ]
@@ -43,7 +38,7 @@
     "eslint": "^4.19.0",
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
+    "lint-staged": "^7.1.2",
     "prettier": "^1.11.1"
   }
 }
