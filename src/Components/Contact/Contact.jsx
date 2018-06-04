@@ -35,16 +35,15 @@ export default class Contact extends Component {
         formEmail: "",
         formName: "",
         formMessage: "",
-    }
+    };
 
     handleChange = type => e => {
         this.setState({[type]: e.target.value});
-    }
+    };
 
     submitForm = async () => {
         const url = "https://an3g0x37r9.execute-api.us-east-1.amazonaws.com/PROD/v1/contact";
         const body = {email:this.state.formEmail, name:this.state.formName, message:this.state.formMessage};
-        console.log(body);
         let response = await(
             await fetch(url,
                 {
@@ -55,9 +54,7 @@ export default class Contact extends Component {
                 }
             )
         ).json();
-
-        console.log(response);
-    }
+    };
 
     render() {
         return (
@@ -101,6 +98,6 @@ export default class Contact extends Component {
                     </FlexBoxRow>
                 </EightyPercentSection>
             </Fragment>
-        )
+        );
     }
 }
