@@ -29,16 +29,38 @@ let ButtonImage = styled.img`
 `;
 
 export default class Contact extends Component {
+    state = {
+        isValidated: false,
+        name: "",
+        email: "",
+        message: ""
+    };
+
+    validate = () => {
+
+    };
+
+    handleChange = (e, {name, value}) => this.setState({
+        [name]:value 
+    });
+
+    submitHandler = (event) => {
+        event.preventDefault();
+        if(this.validate()){
+            console.log("Hi we validated");
+        }
+
+    };
     render() {
         return (
             <Fragment forRoute="/Contact">
                 <EightyPercentSection>
                     <h2>Feel Free to Reach Out</h2>
                     <FlexBoxRow>
-                        <Form>
-                            <Form.Input id="email" placeholder="Your e-mail address" />
-                            <Form.Input id="name" placeholder="Your name"/>
-                            <Form.TextArea id="message" placeholder='Your message' />
+                        <Form onSubmit={this.submitHandler}>
+                            <Form.Input name="email" placeholder="Your e-mail address" onChange={this.handleChange} />
+                            <Form.Input name="name" placeholder="Your name"/>
+                            <Form.TextArea name="message" placeholder='Your message' />
                             <Form.Button>Submit</Form.Button>
                         </Form>
                         <FlexBoxColumn>

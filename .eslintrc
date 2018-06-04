@@ -26,6 +26,7 @@
             2,
             "safe"
         ],
+        "no-console":1,
         "no-debugger": 2,
         "no-eval": 2,
         "no-with": 2,
