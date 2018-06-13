@@ -20,14 +20,28 @@ let FlexBoxRow = styled.section`
 `;
 
 let FlexBoxColumn = styled.section`
-    padding: 10px;
+    padding: 0px 10px;
     display: inline-flex;
     flex-direction: column;
     align-content: space-between;
 `;
 
+let StyledA = styled.a`
+    display: block;
+    max-width: 50px;
+    width: auto;
+    height: auto;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+`;
+
 let ButtonImage = styled.img`
-    max-width: 5%;
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 `;
 
 export default class Contact extends Component {
@@ -88,12 +102,12 @@ export default class Contact extends Component {
                             <Form.Button onClick={this.submitForm}>Submit</Form.Button>
                         </Form>
                         <FlexBoxColumn>
-                            <a href="https://github.com/pasab75">
+                            <StyledA href="https://github.com/pasab75">
                                 <ButtonImage src={githubLogo} alt="github" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/paul-sabatino-4b800247">
+                            </StyledA>
+                            <StyledA href="https://www.linkedin.com/in/paul-sabatino-4b800247">
                                 <ButtonImage src={linkedin} alt="linkedin" />
-                            </a>
+                            </StyledA>
                         </FlexBoxColumn>
                     </FlexBoxRow>
                 </EightyPercentSection>

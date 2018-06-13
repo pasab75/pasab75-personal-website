@@ -7,7 +7,7 @@ import "semantic-ui-css/semantic.min.css";
 import DockerImage from "./static/docker 800x600.png";
 import NodeImage from "./static/nodejs 800x600.png";
 import ReactImage from "./static/react 800x600.jpg";
-import CSharpImage from "./static/c# 800x600.jpg";
+import CSharpImage from "./static/c sharp 800x600.jpg";
 import PythonImage from "./static/python-logo 800x600.png";
 import StormImage from "./static/storm_logo 800x600.png";
 import JavaImage from "./static/java 800x600.jpg";
@@ -45,7 +45,7 @@ export default class About extends Component {
                                 metaText={"Expert with experience since 2015"}
                                 metaType={"date"}
                                 descriptionText={
-                                    "Using Docker, Ansible, or Kubernetes: I've designed low maintence environments handling problems of all sizes."
+                                    "Using Docker, Ansible, or Kubernetes: I've designed low maintenance environments handling problems of all sizes."
                                 }
                             />
                             <SkillCard
