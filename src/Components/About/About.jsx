@@ -12,6 +12,7 @@ import PythonImage from "./static/python-logo 800x600.png";
 import StormImage from "./static/storm_logo 800x600.png";
 import JavaImage from "./static/java 800x600.jpg";
 import DataImage from "./static/datascience 800x600.jpg";
+import ClimbingImage from "./static/rock climbing.jpg";
 
 // const imageStyle = {
 //     position: "relative",
@@ -25,9 +26,6 @@ const ContainerDiv = styled.section`
     align-items: center;
     width: 80%;
     margin: 0 auto;
-`;
-
-const StyledH2 = styled.h2`
     padding-top: 10px;
 `;
 
@@ -37,7 +35,6 @@ export default class About extends Component {
             <Fragment forRoute="/About">
                 <section>
                     <ContainerDiv>
-                        <StyledH2>I&#39;m experienced with:</StyledH2>
                         <Card.Group stackable={true}>
                             <SkillCard
                                 image={DockerImage}
@@ -97,11 +94,6 @@ export default class About extends Component {
                                     solutions and Java is here for that. Java has enabled some of my
                                     best data processing work.`}
                             />
-                        </Card.Group>
-                    </ContainerDiv>
-                    <ContainerDiv>
-                        <StyledH2>I&#39;m Knowledgable About: </StyledH2>
-                        <Card.Group stackable={true}>
                             <SkillCard
                                 image={ReactImage}
                                 headerText={"ReactJS"}
@@ -117,6 +109,15 @@ export default class About extends Component {
                                 }
                                 metaType={"date"}
                                 descriptionText={`I can produce fast, scalable code that is easy to maintain with C#.`}
+                            />
+                            <SkillCard
+                                image={ClimbingImage}
+                                headerText={"Rock Climbing"}
+                                metaText={
+                                    "Giving it my all since 2013"
+                                }
+                                metaType={"date"}
+                                descriptionText={`I scale mountains for fun in my free time.`}
                             />
                         </Card.Group>
                     </ContainerDiv>

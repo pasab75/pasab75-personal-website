@@ -1,32 +1,32 @@
-import React, { Component } from "react"
-import { Fragment } from "redux-little-router"
-import { Form } from "semantic-ui-react"
-import styled from "styled-components"
-import linkedin from "./static/LinkedIn.png"
-import githubLogo from "./static/github-logo.png"
-import validator from "validator"
+import React, { Component } from "react";
+import { Fragment } from "redux-little-router";
+import { Form } from "semantic-ui-react";
+import styled from "styled-components";
+import linkedin from "./static/LinkedIn.png";
+import githubLogo from "./static/github-logo.png";
+import validator from "validator";
 
-let EightyPercentSection = styled.section`
+const EightyPercentSection = styled.section`
     text-align: left;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 20px;
 `;
 
-let FlexBoxRow = styled.section`
+const FlexBoxRow = styled.section`
     display: inline-flex;
     flex-direction: row;
     align-content: space-between;
 `;
 
-let FlexBoxColumn = styled.section`
+const FlexBoxColumn = styled.section`
     padding: 0px 10px;
     display: inline-flex;
     flex-direction: column;
     align-content: space-between;
 `;
 
-let StyledA = styled.a`
+const StyledA = styled.a`
     display: block;
     max-width: 50px;
     width: auto;
@@ -36,7 +36,7 @@ let StyledA = styled.a`
     padding-right: 5px;
 `;
 
-let ButtonImage = styled.img`
+const ButtonImage = styled.img`
     display: block;
     max-width: 100%;
     width: auto;
@@ -44,11 +44,23 @@ let ButtonImage = styled.img`
     object-fit: contain;
 `;
 
+const ErrorSection = styled.section`
+    background: #c51244 !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
+    position: relative; 
+    display: inline-block !important;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    margin-top: 10px;
+    padding: 10px;
+`;
+
 export default class Contact extends Component {
     state = {
         formEmail: "",
         formName: "",
         formMessage: "",
+        error: null
     };
 
     handleChange = type => e => {
@@ -56,18 +68,24 @@ export default class Contact extends Component {
     };
 
     submitForm = async () => {
-        const url = "https://an3g0x37r9.execute-api.us-east-1.amazonaws.com/PROD/v1/contact";
-        const body = {email:this.state.formEmail, name:this.state.formName, message:this.state.formMessage};
-        let response = await(
-            await fetch(url,
+        try{
+            const url = "https://an3g0x37r9.execute-api.us-east-1.amazonaws.com/PROD/v1/contact";
+            const body = {email:this.state.formEmail, name:this.state.formName, message:this.state.formMessage};
+            fetch(url,
                 {
                     body: JSON.stringify(body),
                     method: "POST",
                     cache: "no-cache",
                     "Access-Control-Allow-Origin":"*"
                 }
-            )
-        ).json();
+            ).then( (response) => {
+                console.log(response);
+                if (response.status !== 200 && response.status !== 304) this.setState({error: `There was an error reaching out to the server, give it a bit, and try again later. ${response}`});
+            });
+           
+        }catch(ex){
+            this.setState({error:"There was an error reaching out to the server, give it a bit, and try again later."});
+        }
     };
 
     render() {
@@ -75,6 +93,14 @@ export default class Contact extends Component {
             <Fragment forRoute="/Contact">
                 <EightyPercentSection>
                     <h2>Feel Free to Reach Out</h2>
+                    { 
+                        this.state.error && 
+                        <section>
+                        <ErrorSection>
+                            {this.state.error}
+                        </ErrorSection>
+                        </section>
+                    }
                     <FlexBoxRow>
                         <Form>
                             <Form.Input
@@ -83,7 +109,7 @@ export default class Contact extends Component {
                                 onChange={this.handleChange("formEmail")}
                                 placeholder="Your e-mail address"
                                 error={
-                                    this.state.formEmail !== null &&
+                                    this.state.formEmail !== "" &&
                                     !validator.isEmail(this.state.formEmail)
                                 }
                             />

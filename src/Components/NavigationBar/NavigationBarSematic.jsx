@@ -54,10 +54,10 @@ class NavigationBar extends Component {
                             name="Contact"
                             active={activeItem === "Contact"}
                         />
-                        <this.NavItem
+                        {/* <this.NavItem
                             name="Projects"
                             active={activeItem === "Projects"}
-                        />
+                        /> */}
                     </Menu.Menu>
                 </Menu>
             </div>

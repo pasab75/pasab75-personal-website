@@ -5,28 +5,28 @@ import {routerForBrowser} from "redux-little-router";
 import NavigationBarSematic from "./Components/NavigationBar/NavigationBarSematic";
 import About from "./Components/About/About";
 import Home from "./Components/Home/Home";
-import Projects from "./Components/Projects/Projects";
+// import Projects from "./Components/Projects/Projects";
 import Contact from "./Components/Contact/Contact";
 
 const initialState = {};
 const routes = {
     "/": {
-        title: "Home"
+        title: "Home",
     },
     "/About": {
-        title: "About"
+        title: "About",
     },
     "/Contact": {
-        title: "Contact"
+        title: "Contact",
     },
     "/Projects": {
-        title: "Projects"
-    }
+        title: "Projects",
+    },
 };
 
 const {reducer, middleware, enhancer} = routerForBrowser({
     // The configured routes. Required.
-    routes
+    routes,
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const Store = createStore(
@@ -47,7 +47,7 @@ export class Router extends Component {
                     <div>
                         <Home />
                         <About />
-                        <Projects />
+                        {/* <Projects /> */}
                         <Contact />
                     </div>
                 </Fragment>
