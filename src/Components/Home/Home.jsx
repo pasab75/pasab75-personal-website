@@ -8,6 +8,7 @@ const TextSection = styled.section`
     position: relative;
     text-align: center;
     max-height: 600px;
+    font-size: 1vw;
 `;
 
 export default class Home extends Component {

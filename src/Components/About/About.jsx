@@ -26,7 +26,7 @@ const ContainerDiv = styled.section`
     align-items: center;
     width: 80%;
     margin: 0 auto;
-    padding-top: 10px;
+    padding-top: 20px;
 `;
 
 export default class About extends Component {
