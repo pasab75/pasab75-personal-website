@@ -55,16 +55,28 @@ const ErrorSection = styled.section`
     padding: 10px;
 `;
 
+const SubmitSection = styled.section`
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    position: absolute;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 1px #aaaaaa;
+`;
+
 export default class Contact extends Component {
     state = {
         formEmail: "",
         formName: "",
         formMessage: "",
-        error: null
+        error: null,
+        submit: false
     };
 
     handleChange = type => e => {
-        this.setState({[type]: e.target.value});
+        this.setState({[type]: e.target.value, submit: false, error: false});
     };
 
     submitForm = async () => {
@@ -81,8 +93,10 @@ export default class Contact extends Component {
             ).then( (response) => {
                 console.log(response);
                 if (response.status !== 200 && response.status !== 304) this.setState({error: `There was an error reaching out to the server, give it a bit, and try again later. ${response}`});
+                this.setState({submit: true});
+            }).catch( (ex) => {
+                this.setState({error:"There was an error reaching out to the server, give it a bit, and try again later."});
             });
-           
         }catch(ex){
             this.setState({error:"There was an error reaching out to the server, give it a bit, and try again later."});
         }
@@ -99,6 +113,14 @@ export default class Contact extends Component {
                         <ErrorSection>
                             {this.state.error}
                         </ErrorSection>
+                        </section>
+                    }
+                    { 
+                        this.state.submit && 
+                        <section>
+                        <SubmitSection>
+                            <p>Thanks for your message</p>
+                        </SubmitSection>
                         </section>
                     }
                     <FlexBoxRow>
