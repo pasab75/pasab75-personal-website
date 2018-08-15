@@ -6,6 +6,9 @@ import linkedin from "./static/LinkedIn.png";
 import githubLogo from "./static/github-logo.png";
 import validator from "validator";
 
+const OK = 200;
+const UNCHANGED = 304;
+
 const EightyPercentSection = styled.section`
     text-align: left;
     padding-left: 10%;
@@ -87,18 +90,19 @@ export default class Contact extends Component {
                 {
                     body: JSON.stringify(body),
                     method: "POST",
+                    mode: 'cors',
                     cache: "no-cache",
                     "Access-Control-Allow-Origin":"*"
                 }
             ).then( (response) => {
-                console.log(response);
-                if (response.status !== 200 && response.status !== 304) this.setState({error: `There was an error reaching out to the server, give it a bit, and try again later. ${response}`});
+                if (response.status !== OK && response.status !== UNCHANGED) this.setState({error: `There was an error reaching out to the server, give it a bit, and try again later. ${response}`});
                 this.setState({submit: true});
             }).catch( (ex) => {
-                this.setState({error:"There was an error reaching out to the server, give it a bit, and try again later."});
+                this.setState({error:"There was an error reaching out to the server, give it a bit, and try again later.", submit: false});
             });
+            //this.setState({submit: true});
         }catch(ex){
-            this.setState({error:"There was an error reaching out to the server, give it a bit, and try again later."});
+            this.setState({error:"There was an error reaching out to the server, give it a bit, and try again later.", submit: false});
         }
     };
 
@@ -113,14 +117,6 @@ export default class Contact extends Component {
                         <ErrorSection>
                             {this.state.error}
                         </ErrorSection>
-                        </section>
-                    }
-                    { 
-                        this.state.submit && 
-                        <section>
-                        <SubmitSection>
-                            <p>Thanks for your message</p>
-                        </SubmitSection>
                         </section>
                     }
                     <FlexBoxRow>
@@ -158,6 +154,14 @@ export default class Contact extends Component {
                             </StyledA>
                         </FlexBoxColumn>
                     </FlexBoxRow>
+                    { 
+                        this.state.submit && 
+                        <section>
+                        <SubmitSection>
+                            <p>Thanks for your message</p>
+                        </SubmitSection>
+                        </section>
+                    }
                 </EightyPercentSection>
             </Fragment>
         );
