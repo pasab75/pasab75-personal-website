@@ -120,7 +120,7 @@ export default class Contact extends Component {
                         </section>
                     }
                     <FlexBoxRow>
-                        <Form>
+                        <Form size="big">
                             <Form.Input
                                 id="email"
                                 value={this.state.formEmail}
