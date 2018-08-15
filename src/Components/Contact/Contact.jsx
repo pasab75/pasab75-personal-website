@@ -120,9 +120,10 @@ export default class Contact extends Component {
                         </section>
                     }
                     <FlexBoxRow>
-                        <Form size="big">
+                        <Form size="large">
                             <Form.Input
                                 id="email"
+                                style={{"width":"40rem"}}
                                 value={this.state.formEmail}
                                 onChange={this.handleChange("formEmail")}
                                 placeholder="Your e-mail address"
